@@ -1,0 +1,6 @@
+Here we are using SCSS which is a special type of file for SASS, a program written in Ruby that assembles CSS style sheets 
+for a browser. SCSS is like CSS with better formatting. Being an extension of CSS3, in SCSS, we can add nested rules, 
+variables, mixins, selector inheritance, and more.
+
+Using node-sass library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
+It allows you to natively compile .scss files to css at incredible speed and automatically via a connect middleware.
