@@ -27,7 +27,7 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    background: rgba(lighten($primary-color, 2), 0.2);
   }
 }
 
@@ -189,6 +189,40 @@ main {
   background: darken($color: $primary-color, $amount: 10);
   color: set-text-color($primary-color);
   height: 60px;
+}
+
+/* Animation */
+.typing {
+  border-right: solid 3px set-text-color($primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 28px;
+  color: set-text-color($primary-color);
+}
+.typing {
+  animation: animated-text 4s steps(50, end) 1s 1 normal both,
+    animated-cursor 600ms steps(50, end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 540px;
+  }
+}
+
+/* cursor animations */
+@keyframes animated-cursor {
+  from {
+    border-right-color: set-text-color($primary-color);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
 
 // because we want this to run after the initial css
