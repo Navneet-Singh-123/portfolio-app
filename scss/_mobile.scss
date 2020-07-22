@@ -10,6 +10,12 @@
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
+  #contact {
+    .boxes {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 // Tablets and small laptops

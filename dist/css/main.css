@@ -192,25 +192,35 @@ main {
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
 
-.boxes {
-  display: block;
-  flex-wrap: wrap;
+#contact .boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1rem;
   text-align: center; }
-  .boxes div {
+  #contact .boxes div {
     font-size: 2rem;
     border: 3px white solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
+    border-radius: 5px;
     transition: all 0.5s ease-out; }
-    .boxes div:hover {
+    #contact .boxes div:hover {
       padding: 0.5rem 1.5rem;
       background: #eece1a;
       color: #000; }
-      .boxes div:hover span {
+      #contact .boxes div:hover span {
         color: #000; }
+
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+  border-radius: 5px;
+  background-color: grey; }
 
 .btn, .btn-light, .btn-dark {
   display: block;
@@ -267,7 +277,10 @@ main {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  #contact .boxes {
+    display: grid;
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 768px) {
   main {
