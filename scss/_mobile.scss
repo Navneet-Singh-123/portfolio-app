@@ -3,6 +3,12 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+  #contact {
+    .boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 }
 
 // Desktops and laptops
@@ -12,8 +18,7 @@
   }
   #contact {
     .boxes {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: block;
     }
   }
 }
@@ -72,6 +77,11 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+  #contact {
+    .boxes {
+      display: block;
+    }
+  }
 }
 
 // smartphones
@@ -81,5 +91,10 @@
   }
   .projects {
     grid-template-columns: repeat(1, 1fr);
+  }
+  #contact {
+    .boxes {
+      display: block;
+    }
   }
 }
