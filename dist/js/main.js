@@ -53,3 +53,50 @@ function initMap() {
     infowindow.open(map, marker);
   });
 }
+
+// Typing effect
+
+// constructor function
+const TypeWriter = function (txtElement, words) {
+  this.txtElement = txtElement;
+  this.words = words;
+  this.txt = ""; // The current words showing up in that area
+  this.wordIndex = 0;
+  this.type(); // Method associated with this type writer that does everything
+};
+
+// Type method
+TypeWriter.prototype.type = function () {
+  // Get the current index of the word
+  const current = this.wordIndex % this.words.length;
+  // get full text of cuurent word
+  const fulltext = this.words[current];
+
+  // Add a char
+  this.txt = fulltext.substring(0, this.txt.length + 1);
+
+  // Insert txt into element
+  this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+  // initital Typespeed
+  let typeSpeed = 120;
+
+  // If word is complete
+  if (this.txt === fulltext) {
+    // Make pause at end
+    typeSpeed = 0;
+  }
+
+  // Want to run this at a certain pace
+  setTimeout(() => this.type(), typeSpeed);
+};
+
+// Init on DOM load
+document.addEventListener("DOMContentLoaded", init);
+
+// Init app
+function init() {
+  const txtElement = document.querySelector(".txt-type");
+  const words = JSON.parse(txtElement.getAttribute("data-words"));
+  // Init TypeWriter
+  new TypeWriter(txtElement, words);
+}
