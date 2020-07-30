@@ -17,8 +17,9 @@ body {
 
 // Headings
 h1,
-h2,
-h3 {
+span,
+h3,
+h2 {
   margin: 0;
   font-weight: 400;
   &.lg-heading {
@@ -28,6 +29,12 @@ h3 {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color, 2), 0.2);
+  }
+}
+
+.txt-type {
+  .txt {
+    border-right: 3px solid set-text-color($primary-color);
   }
 }
 
