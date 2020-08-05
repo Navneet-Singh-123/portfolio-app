@@ -136,6 +136,9 @@ main {
       @include easeOut;
     }
   }
+  .item {
+    align-self: center;
+  }
 }
 
 // contact page
