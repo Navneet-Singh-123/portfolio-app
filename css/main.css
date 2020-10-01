@@ -114,20 +114,26 @@ body {
       z-index: -1; }
 
 h1,
-h2,
-h3 {
+span,
+h3,
+h2 {
   margin: 0;
   font-weight: 400; }
   h1.lg-heading,
-  h2.lg-heading,
-  h3.lg-heading {
+  span.lg-heading,
+  h3.lg-heading,
+  h2.lg-heading {
     font-size: 6rem; }
   h1.sm-heading,
-  h2.sm-heading,
-  h3.sm-heading {
+  span.sm-heading,
+  h3.sm-heading,
+  h2.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(73, 73, 73, 0.2); }
+
+.txt-type .txt {
+  border-right: 3px solid #fff; }
 
 a {
   color: #fff;
@@ -191,26 +197,36 @@ main {
       opacity: 0.5;
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
+  .projects .item {
+    align-self: center; }
 
-.boxes {
-  display: block;
-  flex-wrap: wrap;
+#contact .boxes {
+  grid-gap: 30px;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1rem;
   text-align: center; }
-  .boxes div {
+  #contact .boxes div {
     font-size: 2rem;
     border: 3px white solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
+    border-radius: 5px;
     transition: all 0.5s ease-out; }
-    .boxes div:hover {
+    #contact .boxes div:hover {
       padding: 0.5rem 1.5rem;
       background: #eece1a;
       color: #000; }
-      .boxes div:hover span {
+      #contact .boxes div:hover span {
         color: #000; }
+
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+  border-radius: 5px;
+  background-color: grey; }
 
 .btn, .btn-light, .btn-dark {
   display: block;
@@ -263,11 +279,20 @@ main {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  #contact .boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; }
+  .sm-heading {
+    font-size: 30px; } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  #contact .boxes {
+    display: block; }
+  .sm-heading {
+    font-size: 25px; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -276,6 +301,8 @@ main {
     main .lg-heading {
       line-height: 1;
       margin-bottom: 1rem; }
+    main .sm-heading {
+      font-size: 20px; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -299,10 +326,23 @@ main {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  #contact .boxes {
+    display: block; }
+    #contact .boxes #email {
+      font-size: 100%; }
+    #contact .boxes #phone {
+      font-size: 100%; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; }
+    margin-top: 20vh;
+    font-size: 4rem; }
+  main#contact h1,
+  main#work h1,
+  main#about h1 {
+    font-size: 4rem; }
   .projects {
-    grid-template-columns: repeat(1, 1fr); } }
+    grid-template-columns: repeat(1, 1fr); }
+  #contact .boxes {
+    display: block; } }
