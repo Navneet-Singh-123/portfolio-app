@@ -1,4 +1,4 @@
-Portfolio Template
+## Portfolio Template
 
 This is a portfolio template which is completley responsive and mobile friendly. 
 It is built using HTML, CSS, JS and SCSS
